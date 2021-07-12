@@ -1,0 +1,21 @@
+:root {
+    --flexDisplay: flex;
+}
+header {
+    display: var(--flexDisplay);
+    flex-direction: row;
+    justify-content: space-between;
+}
+main {
+    display: var(--flexDisplay);
+    flex-direction: column;
+}
+section {
+    display: var(--flexDisplay);
+    justify-content: center;
+}
+#startButton {
+    font-size: x-large;
+    background-color: black;
+    color: yellow;
+}

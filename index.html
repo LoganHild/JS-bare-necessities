@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript-quiz</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript-"The Bare Necessities"</h1>
+        <h2 id = "countdown"></h2>
+    </header>
+    <main>
+        <h2>Put your skills to the test with this multiple choice quiz on the fundamentals of JavaScript!</h2>
+        <h3>Description</h3>
+        <ul>
+            <li>Press the start button to begin the quiz.</li>
+            <li>Once the START button has been pressed the timer will begin counting down.</li>
+            <li>Click the checkboxes to select your answer.</li>
+            <li>Incorrect answers will result in 5 seconds being subtracted from the timer.</li>
+            <li>The time remaining at the end of the quiz will be the user's score.</li>
+            <li>Once the game is over, add your Initials to be placed on the Highscores list!</li>
+        </ul>
+        <section>
+            <input id = "startButton" type = "Submit" value = "START">
+            <div id = quizDiv>
+                <div id = "question"></div>
+                <div class = "options">
+                    <div class = "choice" id = "A"></div>
+                    <div class = "choice" id = "B"></div>
+                    <div class = "choice" id = "C"></div>
+                </div>
+            </div>
+            <div id = "score"></div>
+
+        </section>
+    </main>
+    <script src = "script.js"></script>
+</body>
+</html>
