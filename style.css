@@ -1,21 +1,52 @@
 :root {
     --flexDisplay: flex;
+    --center: center;
+    --column: column;
+    --blackColor: #0e0e0e;
+    --yellowColor: yellow;
+    --borderRadius: 10px;
 }
+/*added some css variables and styled how I wanted*/
 header {
     display: var(--flexDisplay);
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: var(--column);
+    justify-content: var(--center);
+    align-items: var(--center);
+    background-color: var(--blackColor);
+    color: var(--yellowColor);
+    border-radius: var(--borderRadius);
+}
+body {
+    background-color: #2f3639;
 }
 main {
     display: var(--flexDisplay);
     flex-direction: column;
+    justify-content: var(--center);
+    align-items: var(--center);
+    padding: 50px;
+}
+.description {
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: var(--borderRadius);
+}
+h3 {
+    font-size: 25px;
+}
+ul {
+    font-size: 20px;
+    font-weight: bold;
 }
 section {
     display: var(--flexDisplay);
-    justify-content: center;
+    justify-content: var(--center);
+    flex-direction: var(--column);
 }
-#startButton {
+.button {
     font-size: x-large;
-    background-color: black;
-    color: yellow;
+    background-color: var(--blackColor);
+    color: var(--yellowColor);
+    border-radius: var(--borderRadius);
 }
