@@ -90,7 +90,8 @@ function timerFunction() {
         if (timer <= 0) {
             clearInterval(timerInterval);
             countdown.classList.add (visible);
-            alert("time is up!")
+            results();
+            quiz.classList.add(visible);
         }
     }, 1000)
     start.classList.add(visible);
@@ -117,7 +118,7 @@ var questionCount = 0;
 
 
 //To move on to next question
-var nextButton = document.querySelector(".nextButton");
+var nextButton = document.querySelector(".nextBtn");
 nextButton.addEventListener("click", moveOn)
 
 function moveOn() {
@@ -185,3 +186,7 @@ function optionSelected(answer) {
         allList.children[i].classList.add("disabled");
     }
 }
+
+//For highscore submit
+var submit = document.querySelector(".submitBtn");
+

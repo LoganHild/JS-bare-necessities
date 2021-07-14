@@ -28,7 +28,7 @@ main {
     align-items: var(--center);
     padding: 50px;
 }
-.description, .scoreBox {
+.description, .scoreBox, .highscorePage {
     display: var(--flexDisplay);
     flex-direction: var(--column);
     background-color: var(--whiteColor);
