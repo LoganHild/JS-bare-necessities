@@ -108,4 +108,6 @@ section {
     font-weight: bold;
     color: var(--blackColor);
 }
-
+.disabled {
+    pointer-events: none;
+}

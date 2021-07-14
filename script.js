@@ -4,6 +4,8 @@ var begin = document.querySelector("#beginBtn")
 var countdown = document.querySelector("#countdown");
 var box = document.querySelector(".box");
 var quiz = document.querySelector(".quiz")
+var rightWrong = document.querySelector(".rightWrong")
+var allList = document.querySelector(".optionList")
 
 //Variable for repeated class addition
 var visible = "boxVisible";
@@ -63,7 +65,7 @@ var choicesDisplayed = [
     }, 
     {
         "number": "6",
-        "question" : "Which node relationship do the <head> and <body> elements have?",
+        "question" : "Which node relationship do the 'head' and 'body' elements have?",
         "answer": "Siblings",
         "options": [
             "Parent, Child",
@@ -77,13 +79,13 @@ var choicesDisplayed = [
 start.addEventListener("click", timerFunction);
 
 //moved timer variable to be accessed by function below
-var timer = 30;
+var timer = 50;
 
 function timerFunction() {
     var timerInterval = setInterval(function () {
         timer--;
         countdown.textContent = timer + "seconds left."
-        if (timer === 0) {
+        if (timer <= 0) {
             clearInterval(timerInterval);
             alert("time is up!")
         }
@@ -110,7 +112,19 @@ function showQuiz() {
 
 var questionCount = 0;
 
+//To move on to next question
+var nextButton = document.querySelector(".nextButton");
+nextButton.addEventListener("click", moveOn)
+
+function moveOn() {
+    questionCount++;
+    questions(questionCount)
+    nextButton.classList.add(visible);
+    rightWrong.classList.add(visible);
+}
+
 //getting questions and options from array
+
 function questions(index) {
     var questionText = document.querySelector(".questions");
     var optionText = document.querySelector(".optionList");
@@ -131,80 +145,24 @@ function questions(index) {
 function optionSelected(answer) {
     var userAnswer = answer.textContent;
     var correctAnswer = choicesDisplayed[questionCount].answer;
+    var all = allList.children.length;
     if (userAnswer === correctAnswer) {
         console.log("answer is correct");
-        var right = document.querySelector(".rightWrong")
+        var right = rightWrong;
         var rightInsert = '<span class = "correct">' + "Correct!" + '</span>';
         right.innerHTML = rightInsert;
+        nextButton.classList.remove(visible);
+        right.classList.remove(visible)
     } else {
         console.log("answer is wrong")
-        var wrong = document.querySelector(".rightWrong")
+        var wrong = rightWrong;
         var wrongInsert = '<span class = "incorrect">' + "Incorrect!" + '</span>';
         wrong.innerHTML = wrongInsert;
-
         timer -= 5;
+        nextButton.classList.remove(visible);
+        wrong.classList.remove(visible);
+    }
+    for (var i = 0; i < all; i++) {
+        allList.children[i].classList.add("disabled");
     }
 }
-
-
-
-//event listener for when one is clicked *testing*
-
-
-//function for user choice *testing*
-function moveOn() {
-    if(questionCount < choicesDisplayed.length -1) {
-        questionCount++;
-        questions
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var quiz = document.querySelector("#quizDiv");
-// var question = document.querySelector("#question");
-// var options = document.querySelector("#options");
-// var optionA = document.querySelector("#A");
-// var optionB = document.querySelector("#B");
-// var optionC = document.querySelector("#C");
-// var score = document.querySelector("score")
-
-   
