@@ -59,11 +59,12 @@ section {
     color: var(--yellowColor);
     border-radius: 5px;
 }
-.button:hover {
+.button:hover, .options:hover {
     background-color:var(--whiteColor);
     transform: scale(115%);
     border: 5px solid var(--blackColor);
     color: var(--blackColor);
+    cursor: pointer;
 
 }
 #start {
@@ -73,8 +74,8 @@ section {
 .boxVisible {
     visibility: hidden;
 }
-.question {
-    color: var(--blackColor);
+.questions {
+    margin-bottom: 50px;
 }
 .optionList {
     display: var(--flexDisplay);
@@ -90,5 +91,21 @@ section {
 }
 .quiz {
     position: absolute;
-    top: 300px;
+    top: 350px;
 }
+.question {
+    color: var(--blackColor);
+}
+.correct {
+    background-color: green;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--blackColor);
+}
+.incorrect {
+    background-color: red;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--blackColor);
+}
+
