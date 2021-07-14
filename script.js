@@ -3,9 +3,11 @@ var start = document.querySelector("#startBtn");
 var begin = document.querySelector("#beginBtn")
 var countdown = document.querySelector("#countdown");
 var box = document.querySelector(".box");
-var quiz = document.querySelector(".quiz")
-var rightWrong = document.querySelector(".rightWrong")
-var allList = document.querySelector(".optionList")
+var quiz = document.querySelector(".quiz");
+var rightWrong = document.querySelector(".rightWrong");
+var allList = document.querySelector(".optionList");
+var scoreBox = document.querySelector(".scoreBox");
+var score = document.querySelector(".score");
 
 //Variable for repeated class addition
 var visible = "boxVisible";
@@ -87,6 +89,7 @@ function timerFunction() {
         countdown.textContent = timer + "seconds left."
         if (timer <= 0) {
             clearInterval(timerInterval);
+            countdown.classList.add (visible);
             alert("time is up!")
         }
     }, 1000)
@@ -112,15 +115,31 @@ function showQuiz() {
 
 var questionCount = 0;
 
+
 //To move on to next question
 var nextButton = document.querySelector(".nextButton");
 nextButton.addEventListener("click", moveOn)
 
 function moveOn() {
-    questionCount++;
-    questions(questionCount)
-    nextButton.classList.add(visible);
-    rightWrong.classList.add(visible);
+    if (questionCount < choicesDisplayed.length - 1) {
+        questionCount++;
+        questions(questionCount)
+        nextButton.classList.add(visible);
+        rightWrong.classList.add(visible);
+    } else {
+        quiz.classList.add(visible);
+        results();
+        countdown.classList.add (visible);
+    }
+}
+
+//scoreBox function
+function results() {
+    scoreBox.classList.remove(visible);
+    var scoreText = scoreBox.querySelector(".score");
+    var scoreInsert = '<span>' + timer + '</span>';
+    scoreText.innerHTML = scoreInsert;
+
 }
 
 //getting questions and options from array
