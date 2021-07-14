@@ -76,13 +76,16 @@ var choicesDisplayed = [
 //START event listener timer and hides start button after being clicked. 
 start.addEventListener("click", timerFunction);
 
+//moved timer variable to be accessed by function below
+var timer = 30;
+
 function timerFunction() {
-    var timer = 30;
     var timerInterval = setInterval(function () {
         timer--;
         countdown.textContent = timer + "seconds left."
         if (timer === 0) {
             clearInterval(timerInterval);
+            alert("time is up!")
         }
     }, 1000)
     start.classList.add(visible);
@@ -138,21 +141,23 @@ function optionSelected(answer) {
         var wrong = document.querySelector(".rightWrong")
         var wrongInsert = '<span class = "incorrect">' + "Incorrect!" + '</span>';
         wrong.innerHTML = wrongInsert;
+
+        timer -= 5;
     }
 }
 
 
 
-// //event listener for when one is clicked *testing*
-// userChoice.addEventListener("click", moveOn);
+//event listener for when one is clicked *testing*
 
-// //function for user choice *testing*
-// function moveOn() {
-//     if(questionCount < choicesDisplayed.length -1) {
-//         questionCount++;
-//         questions
-//     }
-// }
+
+//function for user choice *testing*
+function moveOn() {
+    if(questionCount < choicesDisplayed.length -1) {
+        questionCount++;
+        questions
+    }
+}
 
 
 
