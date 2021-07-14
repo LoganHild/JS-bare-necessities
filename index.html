@@ -13,32 +13,54 @@
         <h2>Put your skills to the test with this multiple choice quiz on the fundamentals of JavaScript!</h2>
     </header>
     <main>
-        <div id = "start">
-            <button id = "startButton" class = "button">START</button>
+        <div class = "beginning">
+            <button id = "beginBtn" class = "button">BEGIN</button>
+            <h2 id = "countdown"></h2>
         </div>
-        <h2 id = "countdown"></h2>
         <!--flipped some things around how I wanted them to appear on page-->
-        <div class = "description">
-            <h3>Description</h3>
-            <ul>
-                <li>Press the start button to begin the quiz. </li>
-                <li>Once the START button has been pressed the timer will begin counting down.</li>
-                <li>Click the checkboxes to select your answer.</li>
-                <li>Correct Answers will move the user on to the next question and the timer will continue as usual.</li>
-                <li>Incorrect answers will result in 5 seconds being subtracted from the timer.</li>
-                <li>The time remaining at the end of the quiz will be the user's score.</li>
-                <li>Once the game is over, add your Initials to be placed on the Highscores list!</li>
-            </ul>
-        </div>
-        <section>
-            <div class= "buttons">
-                <button id = "quitButton" class = "button">EXIT</button>
-                <!--Continue button might not be necessary, may delete later-->
-                <button id = "continueButton" class = "button">CONTINUE</button>
+        
+        <!--Description Box-->
+        <div class = "box boxVisible">
+            <div class = "description" >
+                <h3>Description</h3>
+                <ul>
+                    <li>Click the <span>START</span> button to begin the quiz. </li>
+                    <li>Once the <span>START</span> button has been pressed the timer will begin counting down.</li>
+                    <li>Click one of the options to select your answer.</li>
+                    <li>Correct answers will move the user on to the next question and the timer will continue as usual.</li>
+                    <li>Incorrect answers will result in <span>5 seconds</span> being subtracted from the timer.</li>
+                    <li>The time remaining at the end of the quiz will be the user's score.</li>
+                    <li>Once the game is over, add your Initials to be placed on the Highscores list!</li>
+                </ul>
+                <div id = "start">
+                    <button id = "startBtn" class = "button">START</button>
+                </div>
             </div>
-            <div id = "score"></div>
-        </section>
+        </div>
+
+        <!--Quiz-->
+        <div class="quiz boxVisible">
+            <section class= "description">
+                <div class="questions">
+                    <!-- <span class = "question">Which of the following is the correct attribute to link an external JS file called "script.js"?</span> -->
+                </div>
+                <div class = "optionList">
+                    <!-- <div class="options">
+                        <span class = "multiple">href = "script.js"</span>
+                    </div>
+                    <div class="options">
+                        <span class = "multiple">rel = "script.js"</span>
+                    </div>
+                    <div class="options">
+                        <span class = "multiple">src = "script.js"</span>
+                    </div> -->
+                </div>
+            </section>
+        </div>
+        
     </main>
-    <script src = "script.js"></script>
+    <script src = "script.js">
+
+    </script>
 </body>
 </html>

@@ -5,6 +5,8 @@
     --blackColor: #0e0e0e;
     --yellowColor: yellow;
     --borderRadius: 10px;
+    --grayColor: #2f3639;
+    --whiteColor: #f5f5f5;
 }
 /*added some css variables and styled how I wanted*/
 header {
@@ -17,7 +19,7 @@ header {
     border-radius: var(--borderRadius);
 }
 body {
-    background-color: #2f3639;
+    background-color: var(--grayColor);
 }
 main {
     display: var(--flexDisplay);
@@ -27,13 +29,20 @@ main {
     padding: 50px;
 }
 .description {
-    background-color: #f5f5f5;
+    display: var(--flexDisplay);
+    flex-direction: var(--column);
+    background-color: var(--whiteColor);
     padding: 10px;
     margin-bottom: 20px;
     border-radius: var(--borderRadius);
 }
-h3 {
+span {
+    color: var(--grayColor);
+}
+h3, .questions {
     font-size: 25px;
+    text-decoration: underline;
+    font-weight: bold;
 }
 ul {
     font-size: 20px;
@@ -44,9 +53,42 @@ section {
     justify-content: var(--center);
     flex-direction: var(--column);
 }
-.button {
+.button, h2, .multiple {
     font-size: x-large;
     background-color: var(--blackColor);
     color: var(--yellowColor);
-    border-radius: var(--borderRadius);
+    border-radius: 5px;
+}
+.button:hover {
+    background-color:var(--whiteColor);
+    transform: scale(115%);
+    border: 5px solid var(--blackColor);
+    color: var(--blackColor);
+
+}
+#start {
+    display: var(--flexDisplay);
+    justify-content: var(--center);
+}
+.boxVisible {
+    visibility: hidden;
+}
+.question {
+    color: var(--blackColor);
+}
+.optionList {
+    display: var(--flexDisplay);
+    justify-content: var(--center);
+    align-items: var(--center);
+}
+.options {
+    color: var(--yellowColor);
+    padding: 25px;
+    margin: 10px;
+    width: 25%;
+    background-color: var(--grayColor);
+}
+.quiz {
+    position: absolute;
+    top: 300px;
 }
