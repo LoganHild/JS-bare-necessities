@@ -208,6 +208,7 @@ var initialsInput = document.querySelector(".initials");
 var scoreInput = document.querySelector(".score");
 var userInputSpan = document.querySelector("#userInitialInput");
 var userScoreSpan = document.querySelector("#userScoreInput");
+var highscore = document.querySelector(".highscorePage");
 
 function renderLastRegistered() {
     var initials = localStorage.getItem("initials");
@@ -217,6 +218,7 @@ function renderLastRegistered() {
 }
 submit.addEventListener("click", function(event) {
     event.preventDefault();
+    highscore.classList.remove(visible);
     var initials = document.querySelector(".initials").value;
     var score = document.querySelector(".score").value;
 
