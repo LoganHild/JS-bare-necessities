@@ -28,7 +28,7 @@ main {
     align-items: var(--center);
     padding: 50px;
 }
-.description, .scoreBox, .highscorePage {
+.description, .scoreBox, .highscorePage{
     display: var(--flexDisplay);
     flex-direction: var(--column);
     background-color: var(--whiteColor);
@@ -95,6 +95,8 @@ section {
 }
 .question {
     color: var(--blackColor);
+    display: var(--flexDisplay);
+    justify-content: var(--center);
 }
 .correct {
     background-color: green;

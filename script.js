@@ -7,7 +7,7 @@ var quiz = document.querySelector(".quiz");
 var rightWrong = document.querySelector(".rightWrong");
 var allList = document.querySelector(".optionList");
 var scoreBox = document.querySelector(".scoreBox");
-var score = document.querySelector(".score");
+
 
 //Variable for repeated class addition
 var visible = "boxVisible";
@@ -74,6 +74,15 @@ var choicesDisplayed = [
             "Siblings",
             "Child, Parent",
         ]
+    },
+    {
+        "question" : "Congratulations!",
+        "answer": "nothing",
+        "options": [
+            "yay",
+            "yay",
+            "yay"
+        ]
     }
     ]
 
@@ -89,16 +98,22 @@ function timerFunction() {
         countdown.textContent = timer + "seconds left."
         if (timer <= 0) {
             clearInterval(timerInterval);
-            countdown.classList.add (visible);
+            countdown.classList.add(visible);
             results();
             quiz.classList.add(visible);
+        } else if (questionCount === choicesDisplayed.length - 1) {
+            clearInterval(timerInterval)
+            quiz.classList.add(visible);
+            results();
         }
     }, 1000)
     start.classList.add(visible);
     box.classList.add (visible)
     questions(0)
 }
+function stopTimer() {
 
+}
 //function to show description box upon begin being clicked.
 begin.addEventListener("click", showBox);
 
@@ -189,4 +204,35 @@ function optionSelected(answer) {
 
 //For highscore submit
 var submit = document.querySelector(".submitBtn");
+var initialsInput = document.querySelector(".initials");
+var scoreInput = document.querySelector(".score");
+var userInputSpan = document.querySelector("#userInitialInput");
+var userScoreSpan = document.querySelector("#userScoreInput");
+
+function renderLastRegistered() {
+    var initials = localStorage.getItem("initials");
+    var score = localStorage.getItem("score");
+    userInputSpan.textContent = initials;
+    userScoreInput.textContent = score;
+}
+submit.addEventListener("click", function(event) {
+    event.preventDefault();
+    var initials = document.querySelector(".initials").value;
+    var score = document.querySelector(".score").value;
+
+    if (initials === "") {
+        alert("Initials cannot be blank");
+    } else if (score === "") {
+        alert("Score cannot be blank");
+    } else {
+        alert("Success! You have been added to the Highscore list!")
+        localStorage.setItem("score", score);
+        localStorage.setItem("initials", initials);
+        
+        
+        renderLastRegistered()
+    }
+})
+
+
 
