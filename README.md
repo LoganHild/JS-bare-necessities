@@ -4,6 +4,7 @@ A multiple choice quiz dedicated to testing the user on the "Bare Necessities" o
   Short, six question quiz to test the user on some basic knowledge of JavaScript. I used HTML as the framework of this project, CSS to make it nicer to look at, and JavaScript for all the processes. This application helps as a short refresh for anyone who needs it. It is also great for spotting small details quickly.
 
 ##Usage
+  * Click the Begin button to show the description and START button.
   * Click the START button to begin the quiz.
   * Upon clicking, the timer and quiz itself will appear on the screen.
   * Click an option at the bottom of the box to select your answer, be sure to read each one carefully!
