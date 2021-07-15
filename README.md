@@ -14,4 +14,7 @@ A multiple choice quiz dedicated to testing the user on the "Bare Necessities" o
   * Incorrect answers will deduct 5 seconds worth of time from the timer.
   * The game is over when the time runs out, which will result in a score of 0, or if the user has made it through all of the questions.
   * Once the game is over, the user may enter their initials and score to the highscores list. **work in progress**
- ## 
+ ## Link To Deployed Page
+ 
+ 
+ ![Screenshot (30)](https://user-images.githubusercontent.com/82903685/125729330-eb7d4f86-f74c-4e61-98a1-306f9077e913.png)
