@@ -15,7 +15,7 @@ A multiple choice quiz dedicated to testing the user on the "Bare Necessities" o
   * The game is over when the time runs out, which will result in a score of 0, or if the user has made it through all of the questions.
   * Once the game is over, the user may enter their initials and score to the highscores list. **work in progress**
  ## Link To Deployed Page
- 
+ https://loganhild.github.io/JS-bare-necessities/
  
  ![Screenshot (30)](https://user-images.githubusercontent.com/82903685/125729330-eb7d4f86-f74c-4e61-98a1-306f9077e913.png)
  ![Screenshot (31)](https://user-images.githubusercontent.com/82903685/125729375-ff463be4-b103-4d6e-b5e6-eb817b67e74d.png)
