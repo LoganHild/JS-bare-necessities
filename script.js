@@ -7,6 +7,7 @@ var quiz = document.querySelector(".quiz");
 var rightWrong = document.querySelector(".rightWrong");
 var allList = document.querySelector(".optionList");
 var scoreBox = document.querySelector(".scoreBox");
+var exit = document.querySelector("#exitBtn");
 
 
 //Variable for repeated class addition
@@ -121,6 +122,8 @@ begin.addEventListener("click", showBox);
 function showBox() {
     box.classList.remove(visible);
     begin.classList.add(visible);
+    showHighscores.classList.add(visible);
+    removeHighscores.classList.add(visible);
 }
 
 //function to show first set of questions
@@ -209,6 +212,8 @@ var initialsInput = document.querySelector(".enterInitials");
 var scoresInput = document.querySelector(".enterScore");
 var list = document.querySelector(".list");
 var highscore= document.querySelector(".highscorePage");
+var showHighscores = document.querySelector(".showHighscores");
+var removeHighscores = document.querySelector(".removeHighscores");
 
 var inputField = document.querySelector(".inputField");
 var scoresList = document.querySelector(".scoresList");
@@ -258,6 +263,17 @@ inputField.addEventListener("submit", function(event) {
     renderScores();
     }
 });
+showHighscores.addEventListener("click", function() {
+    highscore.classList.remove(visible);
+    removeHighscores.classList.remove(visible);
+});
+removeHighscores.addEventListener("click", function() {
+    highscore.classList.add(visible);
+    removeHighscores.classList.add(visible);
+})
+exit.addEventListener("click", function() {
+    location.reload();
+})
 init();
 
 
