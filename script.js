@@ -76,6 +76,7 @@ var choicesDisplayed = [
         ]
     },
     {
+        "number": "",
         "question" : "Congratulations!",
         "answer": "nothing",
         "options": [
@@ -84,7 +85,7 @@ var choicesDisplayed = [
             "yay"
         ]
     }
-    ]
+]
 
 //START event listener timer and hides start button after being clicked. 
 start.addEventListener("click", timerFunction);
@@ -204,37 +205,60 @@ function optionSelected(answer) {
 
 //For highscore submit
 var submit = document.querySelector(".submitBtn");
-var initialsInput = document.querySelector(".initials");
-var scoreInput = document.querySelector(".score");
-var userInputSpan = document.querySelector("#userInitialInput");
-var userScoreSpan = document.querySelector("#userScoreInput");
-var highscore = document.querySelector(".highscorePage");
+var initialsInput = document.querySelector(".enterInitials");
+var scoresInput = document.querySelector(".enterScore");
+var list = document.querySelector(".list");
+var highscore= document.querySelector(".highscorePage");
 
-function renderLastRegistered() {
-    var initials = localStorage.getItem("initials");
-    var score = localStorage.getItem("score");
-    userInputSpan.textContent = initials;
-    userScoreInput.textContent = score;
+var inputField = document.querySelector(".inputField");
+var scoresList = document.querySelector(".scoresList");
+var scores = [];
+
+function renderScores() {
+ scoresList.innerHTML = "";
+
+ for (var i = 0; i < scores.length; i ++) {
+     var score = scores[i];
+
+     var li = document.createElement("li");
+     li.textContent = score;
+     li.setAttribute("data-index", i);
+
+     scoresList.appendChild(li);
+ }
 }
-submit.addEventListener("click", function(event) {
-    event.preventDefault();
-    highscore.classList.remove(visible);
-    var initials = document.querySelector(".initials").value;
-    var score = document.querySelector(".score").value;
-
-    if (initials === "") {
-        alert("Initials cannot be blank");
-    } else if (score === "") {
-        alert("Score cannot be blank");
-    } else {
-        alert("Success! You have been added to the Highscore list!")
-        localStorage.setItem("score", score);
-        localStorage.setItem("initials", initials);
-        
-        
-        renderLastRegistered()
+function init() {
+    var storedScores = JSON.parse(localStorage.getItem("scores"));
+    var storedInitials = JSON.parse(localStorage.getItem("initials"))
+    if (storedScores !== null || storedInitials !== null) {
+        scores = storedScores;
+        initials = storedInitials;
     }
-})
+    renderScores();
+}
+function storeScores() {
+    localStorage.setItem("scores", JSON.stringify(scores));
+    localStorage.setItem("initials", JSON.stringify(initials))
+}
+inputField.addEventListener("submit", function(event) {
+    event.preventDefault();
+    var initialsText = initialsInput.value.trim();
+    var scoresText = scoresInput.value.trim();
+    if (initialsText === "" || scoresText === "") {
+        alert("Input cannot be left blank.")
+        return;
+    } else {
+    alert("Successfully entered your highscore!")
+    highscore.classList.remove(visible);
+    scores.push(initialsText);
+    scores.push(scoresText);
+    initialsInput.value = "";
+    scoresInput.value = "";
+    storeScores();
+    renderScores();
+    }
+});
+init();
 
 
 

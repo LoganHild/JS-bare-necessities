@@ -118,3 +118,6 @@ section {
     top: 400px;
     left: 760px;
 }
+li {
+    list-style-type: none;
+}

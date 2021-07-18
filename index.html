@@ -11,6 +11,7 @@
     <header>
         <h1>JavaScript-"The Bare Necessities"</h1>
         <h2>Put your skills to the test with this multiple choice quiz on the fundamentals of JavaScript!</h2>
+        <button class = "showHighscores button">Show Highscores</button>
     </header>
     <main>
         <div class = "beginning">
@@ -74,21 +75,22 @@
                     </div>
                     <div class = "input">
                         <p>Enter your initials and score to be displayed on the Highscores list!</p>
-                        <div class="inputField">
-                            <input type="text" class="initials" placeholder="Initials here!">
-                            <input type="text" class="score" placeholder = "Score here!">
+                        <form class="inputField">
+                            <input type="text" class="enterInitials" placeholder="Initials here!">
+                            <input type="text" class="enterScore" placeholder = "Score here!">
                             <button class = "submitBtn button">SUBMIT</button>
-                        </div>
+                        </form>
                     </div>
             </section>
         </div>
         <div class = "highscores">
             <section class="highscorePage boxVisible">
-                <div class = "List">
+                <div class = "list">
                     <!--display input highscores here-->
                     <h3>Highscore!</h3>
-                    <p>Initials:<span id = "userInitialInput"></span></p>
-                    <p>User Score:<span id = "userScoreInput"></span></p>
+                    <ul class = "scoresList">
+
+                    </ul>
                 </div>
             </section>
         </div>
