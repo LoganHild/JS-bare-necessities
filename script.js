@@ -218,6 +218,7 @@ var removeHighscores = document.querySelector(".removeHighscores");
 var inputField = document.querySelector(".inputField");
 var scoresList = document.querySelector(".scoresList");
 var scores = [];
+scores.sort();
 
 function renderScores() {
  scoresList.innerHTML = "";
@@ -228,7 +229,6 @@ function renderScores() {
      var li = document.createElement("li");
      li.textContent = score;
      li.setAttribute("data-index", i);
-
      scoresList.appendChild(li);
  }
 }
@@ -243,7 +243,6 @@ function init() {
 }
 function storeScores() {
     localStorage.setItem("scores", JSON.stringify(scores));
-    localStorage.setItem("initials", JSON.stringify(initials))
 }
 inputField.addEventListener("submit", function(event) {
     event.preventDefault();
