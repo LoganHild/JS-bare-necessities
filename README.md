@@ -24,6 +24,8 @@ A multiple choice quiz dedicated to testing the user on the "Bare Necessities" o
 ![Screenshot (33)](https://user-images.githubusercontent.com/82903685/125729424-e2e87b31-9db3-4100-b144-fc0ef26795ef.png)
 ![Screenshot (34)](https://user-images.githubusercontent.com/82903685/125729429-dce05450-3cc6-4366-902d-f8a7c29321f2.png)
 
+## Contact
+
   Email: <hildebrandtlogan@gmail.com>
 
   Github: <https://github.com/LoganHild>
